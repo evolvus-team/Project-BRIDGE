@@ -1,6 +1,6 @@
 # Project BRIDGE
 ### Founded by the EvolvusOS Team
 
-Project BRIDGE is a Python-based gateway for securely connecting private backends and exchanging data without requiring them to expose public IP addresses or open inbound ports.
+Project BRIDGE is a Python-based gateway experiment for securely connecting private backends and exchanging data without requiring them to expose public IP addresses or open inbound ports.
 
 Stay on the lookout for updates!
