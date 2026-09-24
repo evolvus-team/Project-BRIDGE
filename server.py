@@ -31,8 +31,11 @@ async def handle_client(websocket):
 
         # Check for duplicate backend_id
         if backend_id in connections:
-            print(f"[-] Duplicate backend_id '{backend_id}' detected. Closing connection...")
-            await connections[backend_id].close()
+            print(f"[-] Duplicate backend_id '{backend_id}' detected. Closing old connection...")
+            old_ws = connections[backend_id]
+            if old_ws is not websocket:
+                await old_ws.close()
+            del connections[backend_id]
             return
         # Registration finished server-side
         print(f"[+] Backend '{backend_id}' registered successfully.")
