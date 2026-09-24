@@ -36,6 +36,7 @@ async def handle_client(websocket):
             return
         # Registration finished server-side
         print(f"[+] Backend '{backend_id}' registered successfully.")
+        connection[backend_id] = websocket
 
         # Send confirmation to client
         await websocket.send(json.dumps({
